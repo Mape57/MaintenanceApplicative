@@ -16,6 +16,7 @@ public class Visualiser implements Action<Boolean> {
 			new AfficherMois(),
 			new AfficherSemaine(),
 			new AfficherJour(),
+			new AfficherPeriode(),
 			new Retour()
 	));
 
