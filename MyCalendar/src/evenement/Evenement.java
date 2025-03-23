@@ -1,12 +1,15 @@
 package evenement;
 
+import objet.EventId;
 import objet.Periode;
 import objet.Personne;
 import objet.Titre;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public abstract class Evenement {
+	protected EventId eventId = new EventId();
 	protected Titre titre;
 	protected Personne proprietaire;
 	protected Periode periode;
@@ -33,5 +36,11 @@ public abstract class Evenement {
 
 	public Periode getPeriode() {
 		return periode;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Evenement evenement)) return false;
+		return Objects.equals(eventId, evenement.eventId);
 	}
 }

@@ -2,6 +2,7 @@ package application;
 
 import evenement.Evenement;
 import evenement.ListeEvenements;
+import objet.EventId;
 import objet.Periode;
 
 public class CalendarManager {
@@ -22,6 +23,10 @@ public class CalendarManager {
 		}
 
 		listeEvenements.ajouterEvenement(evenement);
+	}
+
+	public boolean supprimerEvent(EventId eventId) {
+		return listeEvenements.supprimerEvenement(eventId);
 	}
 
 	public ListeEvenements eventsDansPeriode(Periode periode) {

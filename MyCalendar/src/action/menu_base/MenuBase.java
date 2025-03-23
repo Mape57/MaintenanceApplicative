@@ -14,6 +14,7 @@ public class MenuBase {
 			new AjouterReunion(),
 			new AjouterPeriodique(),
 			new AjouterAnniversaire(),
+			new SupprimerEvenement(),
 			new Deconnexion()
 	));
 
