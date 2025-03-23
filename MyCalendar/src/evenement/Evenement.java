@@ -27,6 +27,10 @@ public abstract class Evenement {
 		return !this_debut.isBefore(other_debut) && !this_debut.isAfter(other_fin);
 	}
 
+	public boolean conflit(Evenement e) {
+		return this.periode.dateDebut().isBefore(e.periode.dateFin()) && this.periode.dateFin().isAfter(e.periode.dateDebut());
+	}
+
 	public Periode getPeriode() {
 		return periode;
 	}

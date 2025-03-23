@@ -27,6 +27,12 @@ public class Anniversaire extends Evenement {
 	}
 
 	@Override
+	public boolean conflit(Evenement e) {
+		// un anniversaire est simplement un rappel, il n'y a pas de chose à faire
+		return false;
+	}
+
+	@Override
 	public String description() {
 		return "Anniversaire de " + personne_fetee + " le " + periode.dateDebut().toLocalDate();
 	}

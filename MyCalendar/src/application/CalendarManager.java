@@ -12,6 +12,15 @@ public class CalendarManager {
 	}
 
 	public void ajouterEvent(Evenement evenement) {
+		ListeEvenements listeConflits = conflit(evenement);
+		if (!listeConflits.getAll().isEmpty()) {
+			System.out.println("Conflit avec les événements suivants :");
+			for (Evenement e : listeConflits.getAll()) {
+				System.out.println("- " + e);
+			}
+			return;
+		}
+
 		listeEvenements.ajouterEvenement(evenement);
 	}
 
@@ -26,7 +35,13 @@ public class CalendarManager {
 	}
 
 	public ListeEvenements conflit(Evenement e) {
-		throw new UnsupportedOperationException("Not implemented yet");
+		ListeEvenements listeConflits = new ListeEvenements();
+		for (Evenement e2 : listeEvenements.getAll()) {
+			if (e.conflit(e2)) {
+				listeConflits.ajouterEvenement(e2);
+			}
+		}
+		return listeConflits;
 	}
 
 	public ListeEvenements getListeEvenements() {

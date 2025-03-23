@@ -32,6 +32,18 @@ public class Periodique extends Evenement {
 		return false;
 	}
 
+	@Override
+	public boolean conflit(Evenement e) {
+		LocalDateTime this_debut = this.periode.dateDebut();
+		while (this_debut.isBefore(e.periode.dateFin())) {
+			if (!this_debut.isBefore(e.periode.dateDebut())) {
+				return true;
+			}
+			this_debut = this_debut.plusDays(this.getFrequence());
+		}
+		return false;
+	}
+
 	public int getFrequence() {
 		return frequence.frequence();
 	}
