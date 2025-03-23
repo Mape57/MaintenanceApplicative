@@ -13,6 +13,7 @@ public class MenuBase {
 			new AjouterRdvPersonnel(),
 			new AjouterReunion(),
 			new AjouterPeriodique(),
+			new AjouterAnniversaire(),
 			new Deconnexion()
 	));
 
