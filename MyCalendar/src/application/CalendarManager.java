@@ -25,6 +25,10 @@ public class CalendarManager {
 		return listeEvenementsPeriode;
 	}
 
+	public ListeEvenements conflit(Evenement e) {
+		throw new UnsupportedOperationException("Not implemented yet");
+	}
+
 	public ListeEvenements getListeEvenements() {
 		return listeEvenements;
 	}
