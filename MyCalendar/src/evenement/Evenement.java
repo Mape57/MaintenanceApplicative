@@ -1,31 +1,33 @@
-package src.evenement;
+package evenement;
 
-import src.evenement.valeur.Personne;
-import src.evenement.valeur.Periode;
-import src.evenement.valeur.Titre;
+import objet.Periode;
+import objet.Personne;
+import objet.Titre;
+
+import java.time.LocalDateTime;
 
 public abstract class Evenement {
-    protected Titre titre;
-    protected Personne proprietaire;
-    protected Periode periode;
+	protected Titre titre;
+	protected Personne proprietaire;
+	protected Periode periode;
 
-    public Evenement(Titre titre, Personne proprietaire, Periode periode) {
-        this.titre = titre;
-        this.proprietaire = proprietaire;
-        this.periode = periode;
-    }
+	public Evenement(Titre titre, Personne proprietaire, Periode periode) {
+		this.titre = titre;
+		this.proprietaire = proprietaire;
+		this.periode = periode;
+	}
 
-    public abstract String description();
+	public abstract String description();
 
-    public Titre getTitre() {
-        return titre;
-    }
+	public boolean evenementDansPeriode(Periode periode) {
+		LocalDateTime this_debut = this.periode.dateDebut();
+		LocalDateTime other_debut = periode.dateDebut();
+		LocalDateTime other_fin = periode.dateFin();
 
-    public Personne getProprietaire() {
-        return proprietaire;
-    }
+		return !this_debut.isBefore(other_debut) && !this_debut.isAfter(other_fin);
+	}
 
-    public Periode getPeriode() {
-        return periode;
-    }
+	public Periode getPeriode() {
+		return periode;
+	}
 }

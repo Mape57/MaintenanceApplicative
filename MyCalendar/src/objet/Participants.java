@@ -1,4 +1,4 @@
-package src.evenement.valeur;
+package objet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +17,6 @@ public class Participants {
 
 	@Override
 	public String toString() {
-		return participants.stream().map(Personne::getNom).collect(Collectors.joining(", "));
+		return participants.stream().map(Personne::nom).collect(Collectors.joining(", "));
 	}
 }

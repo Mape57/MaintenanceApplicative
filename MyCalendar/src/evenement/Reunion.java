@@ -1,6 +1,6 @@
-package src.evenement;
+package evenement;
 
-import src.evenement.valeur.*;
+import objet.*;
 
 public class Reunion extends Evenement {
 	private Lieu lieu;
@@ -14,6 +14,6 @@ public class Reunion extends Evenement {
 
 	@Override
 	public String description() {
-		return "Réunion : " + titre.getTitre() + " à " + lieu.getLieu() + " avec " + participants.toString();
+		return "Réunion : " + titre.titre() + " à " + lieu.lieu() + " avec " + participants.toString();
 	}
 }

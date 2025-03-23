@@ -1,4 +1,4 @@
-package src.evenement;
+package evenement;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package src.evenement;
+package evenement;
 
-import src.evenement.valeur.Personne;
-import src.evenement.valeur.Periode;
-import src.evenement.valeur.Titre;
+import objet.Periode;
+import objet.Personne;
+import objet.Titre;
 
 public class RdvPersonnel extends Evenement {
 	public RdvPersonnel(Titre title, Personne proprietaire, Periode periode) {
@@ -11,6 +11,6 @@ public class RdvPersonnel extends Evenement {
 
 	@Override
 	public String description() {
-		return "RDV : " + titre + " à " + periode.getDateDebut();
+		return "RDV : " + titre + " à " + periode.dateDebut();
 	}
 }
